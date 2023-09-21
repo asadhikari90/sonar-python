@@ -37,7 +37,7 @@ jobs:
       - name : Install Packages and Generate Coverage Report
         run :  | 
              pip install pytest coverage
-             coverage run -m pytest test.py
+             coverage run -m pytest wallet.py
              coverage xml -o coverage.xml
 
            
