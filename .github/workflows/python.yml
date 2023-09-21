@@ -39,10 +39,6 @@ jobs:
              pip install pytest coverage
              coverage run -m pytest test.py
              coverage xml -o coverage.xml
-       
-     
-      #- name: Generate Coverage Report
-       # run: coverage xml -o coverage.xml
 
            
       - name: Create Project Properties file
