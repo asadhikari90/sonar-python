@@ -35,12 +35,15 @@ jobs:
 
 
       - name : Install Packages 
-        run : pip install pytest
+        run :  | 
+             pip install pytest coverage
+             coverage run -m pytest test.py
       
-      - name : Run tests 
-        run : pytest test.py  
-
-      
+    #  - name : Run tests 
+     #   run : pytest test.py  
+     
+      - name: Generate Coverage Report
+        run: coverage xml -o coverage.xml
 
            
       - name: Create Project Properties file
