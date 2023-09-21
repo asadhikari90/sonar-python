@@ -34,14 +34,15 @@ jobs:
           python-version: 3.x  #Can be parametized if needed
 
 
-      - name : Install Packages 
+      - name : Install Packages and Generate Coverage Report
         run :  | 
              pip install pytest coverage
              coverage run -m pytest test.py
+             coverage xml -o coverage.xml
        
      
-      - name: Generate Coverage Report
-        run: coverage xml -o coverage.xml
+      #- name: Generate Coverage Report
+       # run: coverage xml -o coverage.xml
 
            
       - name: Create Project Properties file
@@ -52,10 +53,8 @@ jobs:
 
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master 
-        
         with:
           projectBaseDir: ./
-
         env:  
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
