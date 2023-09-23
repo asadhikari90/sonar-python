@@ -7,7 +7,7 @@ This project contains a simple Python implementation of a Wallet Balance Managem
 
 1. `wallet.py`: Contains the `Wallet` class that manages a wallet's balance.
 2. `test.py`: Contains the unit tests for the `Wallet` class.
-3. `.github/workflows/update.yaml`: GitHub Actions workflow for running the unit tests upon every push to the repository.
+3. `.github/workflows/python.yaml`: GitHub Actions workflow for running the unit tests upon every push to the repository.
 
 ## Usage
 
