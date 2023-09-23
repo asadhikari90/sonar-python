@@ -1,9 +1,16 @@
-def calculate_area_square(length: int | float) -> int | float:  
-    """  
-    Function to calculate the area of a square  
-    :param length: length of the square  
-    :return: area of the square  
-    """  
-    if not isinstance(length, (int, float)) or length <= 0:  
-        raise TypeError("Length must be a positive non-zero number")  
-    return length * length
+class Wallet:
+ 
+    # init method or constructor
+    def __init__(self, balance):
+        self.balance = balance
+ 
+
+    def set_balance(self , val):
+      self.balance = self.balance + val
+    
+    
+    def get_balance(self):
+      return self.balance
+    
+    def remove_balance(self , val):
+      self.balance = self.balance - val
